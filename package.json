@@ -4,7 +4,9 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "cy:run": "cypress run --headed --browser chrome",
+    "cy:run:allure": "cypress run --headed --browser chrome --env allure=true",
+    "cy:parallel": "cypress-parallel -s cy:run:allure -t 4 -d 'cypress/e2e' -a false"
   },
   "author": "mehrab",
   "license": "ISC",
@@ -12,6 +14,7 @@
     "cypress": "^12.8.1"
   },
   "devDependencies": {
-    "@cypress/xpath": "^2.0.3"
+    "@cypress/xpath": "^2.0.3",
+    "@shelex/cypress-allure-plugin": "^2.37.0"
   }
 }
