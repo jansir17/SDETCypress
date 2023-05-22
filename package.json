@@ -4,9 +4,8 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "cy:run": "cypress run --headed --browser chrome",
-    "cy:run:allure": "cypress run --headed --browser chrome --env allure=true",
-    "cy:parallel": "cypress-parallel -s cy:run:allure -t 4 -d 'cypress/e2e' -a false"
+    "test": "node_modules\\.bin\\cypress run --config pageLoadTimeout=100000", 
+    "runtests": "npm run test -- "
   },
   "author": "mehrab",
   "license": "ISC",
